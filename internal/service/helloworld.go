@@ -5,6 +5,7 @@ import(
 	"context"
 
 	pb "loveservice/api/helloworld"
+	"loveservice/internal/biz"
 )
 
 type HelloworldService struct {
@@ -16,6 +17,12 @@ func NewHelloworldService() pb.HelloworldServer {
 }
 
 func (s *HelloworldService) CreateHelloworld(ctx context.Context, req *pb.CreateHelloworldRequest) (*pb.CreateHelloworldReply, error) {
+	//dto -> do
+	//
+	o := new(biz.Greeter)
+	o.Hello = req.hello
+	//调用biz的方法
+
 	return &pb.CreateHelloworldReply{}, nil
 }
 func (s *HelloworldService) UpdateHelloworld(ctx context.Context, req *pb.UpdateHelloworldRequest) (*pb.UpdateHelloworldReply, error) {

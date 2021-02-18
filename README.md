@@ -62,7 +62,7 @@ wire
 ├── go.mod
 ├── go.sum
 └── internal //私有代码目录，go编译器本身支持，用于避免外部项目使用
-    ├── biz
+    ├── biz             //业务逻辑层
     │   ├── README.md
     │   ├── biz.go
     │   └── greeter.go
@@ -78,7 +78,7 @@ wire
     │   ├── http.go
     │   └── server.go
     └── service
-        ├── README.md
+        ├── README.md   作为 api中DTO -> DO的转换 业务逻辑很简单
         ├── greeter.go
         ├── helloworld.go
         └── service.go

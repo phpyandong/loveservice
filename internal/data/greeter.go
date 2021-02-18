@@ -17,7 +17,7 @@ func NewGreeterRepo(data *Data, logger log.Logger) biz.GreeterRepo {
 		log:  log.NewHelper("data/greeter", logger),
 	}
 }
-
+//MySQL 等的具体实现。无需new redis 及mysql
 func (r *greeterRepo) CreateGreeter(g *biz.Greeter) error {
 	return nil
 }

@@ -47,7 +47,7 @@ func newApp(logger log.Logger, hs *http.Server, gs *grpc.Server, greeter *servic
 func main() {
 	flag.Parse()
 	//初始化logger
-	logger := log.NewStdLogger()
+	//logger := log.NewStdLogger()
 	//初始化config
 	config := config.New(
 		config.WithSource(
@@ -70,7 +70,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
+	//
 	// start and wait for stop signal
 	if err := app.Run(); err != nil {
 		panic(err)
