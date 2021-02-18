@@ -35,3 +35,51 @@ go get github.com/google/wire/cmd/wire
 cd cmd/server
 wire
 ```
+
+
+── LICENSE
+├── Makefile
+├── README.md
+├── api
+│   └── helloworld
+│       ├── errors
+│       │   ├── helloworld.pb.go
+│       │   ├── helloworld.proto
+│       │   └── helloworld_errors.pb.go
+│       ├── helloworld.proto
+│       └── v1
+│           ├── greeter.pb.
+│           ├── greeter.proto
+│           ├── greeter_grpc.pb.go
+│           └── greeter_http.pb.go
+├── cmd   //负责程序的：启动，关闭，配置初始化
+│   └── helloworld
+│       ├── main.go
+│       ├── wire.go
+│       └── wire_gen.go
+├── configs
+│   └── config.yaml
+├── go.mod
+├── go.sum
+└── internal //私有代码目录，go编译器本身支持，用于避免外部项目使用
+    ├── biz
+    │   ├── README.md
+    │   ├── biz.go
+    │   └── greeter.go
+    ├── conf
+    │   ├── conf.pb.go
+    │   └── conf.proto
+    ├── data
+    │   ├── README.md
+    │   ├── data.go
+    │   └── greeter.go
+    ├── server
+    │   ├── grpc.go
+    │   ├── http.go
+    │   └── server.go
+    └── service
+        ├── README.md
+        ├── greeter.go
+        ├── helloworld.go
+        └── service.go
+

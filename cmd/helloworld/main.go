@@ -6,12 +6,12 @@ import (
 	pb "loveservice/api/helloworld/v1"
 	"loveservice/internal/conf"
 	"loveservice/internal/service"
-	"github.com/go-kratos/kratos"
-	"github.com/go-kratos/kratos/config"
-	"github.com/go-kratos/kratos/config/file"
-	"github.com/go-kratos/kratos/log"
-	"github.com/go-kratos/kratos/transport/grpc"
-	"github.com/go-kratos/kratos/transport/http"
+	"github.com/go-kratos/kratos/v2"
+	"github.com/go-kratos/kratos/v2/config"
+	"github.com/go-kratos/kratos/v2/config/file"
+	"github.com/go-kratos/kratos/v2/log"
+	"github.com/go-kratos/kratos/v2/transport/grpc"
+	"github.com/go-kratos/kratos/v2/transport/http"
 	"gopkg.in/yaml.v2"
 )
 
@@ -46,8 +46,9 @@ func newApp(logger log.Logger, hs *http.Server, gs *grpc.Server, greeter *servic
 
 func main() {
 	flag.Parse()
+	//初始化logger
 	logger := log.NewStdLogger()
-
+	//初始化config
 	config := config.New(
 		config.WithSource(
 			file.NewSource(flagconf),

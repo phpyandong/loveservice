@@ -5,7 +5,7 @@ import (
 
 	v1 "loveservice/api/helloworld/v1"
 	"loveservice/internal/biz"
-	"github.com/go-kratos/kratos/log"
+	"github.com/go-kratos/kratos/v2/log"
 )
 
 // GreeterService is a greeter service.
