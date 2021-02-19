@@ -1,4 +1,4 @@
-module helloworld
+module loveservice
 
 go 1.15
 
