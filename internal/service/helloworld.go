@@ -6,6 +6,8 @@ import(
 
 	pb "loveservice/api/helloworld"
 	"loveservice/internal/biz"
+	"helloworld/api/helloworld/errors"
+	errors2 "github.com/go-kratos/kratos/v2/errors"
 )
 
 type HelloworldService struct {
@@ -22,6 +24,12 @@ func (s *HelloworldService) CreateHelloworld(ctx context.Context, req *pb.Create
 	o := new(biz.Greeter)
 	o.Hello = req.hello
 	//调用biz的方法
+
+	//使用自动生成的IsXXX 判断是否是某个错误
+	err := new(errors2.StatusError)
+	err.Reason = errors.Errors_MissingName
+
+	errors.IsMissingName(err)
 
 	return &pb.CreateHelloworldReply{}, nil
 }
